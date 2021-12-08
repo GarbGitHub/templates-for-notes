@@ -17,7 +17,6 @@ body,
     color: #5d686f;
     font-weight: 400;
     font-family: 'Merriweather', serif;
-
 }
 
 .navbar {
@@ -30,6 +29,19 @@ body,
     display: flex;
     justify-content: space-between;
     font-size: medium;
+}
+
+h1,
+.form-control.input-title {
+    font-size: 32px;
+	letter-spacing: -0.04em;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.45em;
+    color: #4a4a4a;
+}
+
+h1.header, .card {
+    font-family: 'Lobster', cursive;
 }
 
 h1.header {
@@ -72,10 +84,8 @@ input.search:focus::placeholder {
     box-shadow: none !important;
 }
 
-.offcanvas-header {
-    height: 100px;
+.offcanvas-header,  .offcanvas-search{
     background-color: #60403e;
-    box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 .offcanvas-title {
@@ -107,30 +117,7 @@ p {
     margin-bottom: 5px
 }
 
-h1,
-.form-control.input-title {
-    font-size: 32px;
-	    letter-spacing: -0.04em;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    line-height: 1.45em;
-    color: #4a4a4a;
-}
-/*
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.form-control.input-title {
-    letter-spacing: -0.04em;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 700;
-    line-height: 1.45em;
-    color: #4a4a4a;
-}
-*/
+
 .container__title {
     text-decoration: none;
     color: #343536!important;
@@ -163,7 +150,6 @@ h6,
     background-color: #ffede4;
     border-radius: 15px;
     margin-bottom: 40px;
-	font-family: 'Lobster', cursive;
 }
 
 .card .card-header {
@@ -174,7 +160,6 @@ h6,
 
 .card .card-header h3 {
     color: #000;
-	font-family: 'Lobster', cursive;
 }
 
 .card .card-body .card-bottom {
@@ -198,8 +183,8 @@ h6,
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     transition: .3s;
     color: white;
 }
@@ -220,11 +205,17 @@ svg:hover {
 }
 
 @media (max-width: 1024px) {
-    .search-form-top {
+    .nav-search-form {
         display: none;
     }
     h1.header {
         font-size: 28px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .offcanvas-search-form {
+        display: none;
     }
 }
 
