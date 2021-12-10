@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
+    <title>Заметка</title>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <nav class="navbar fixed-top">
+        <div class="container-fluid position-relative">
+            <div class="position-absolute start-0 px-3">
+                <button class="btn btn-navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <i class="bi bi-sliders"></i>
+                </button>
+            </div>
+            <div class="position-absolute start-50 translate-middle-x">
+                <h1 class="text-center header">Заметки</h1>
+            </div>
+            <div class="position-absolute end-0 px-3">
+                <div class="nav-search-form">
+                    <form class="search-form-top" action="/search/" method="get">
+                        <div class="input-group">
+                            <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
+                            <button class="btn btn-navbar" type="submit" id="btn-search"><i
+                                    class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <a href="" class="offcanvas-header--link">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    example@gmail.com
+                </h5>
+            </a>
+            <button class="btn close-offcanvas" type="button" data-bs-dismiss="offcanvas"><i
+                    class="bi bi-x-lg"></i></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="offcanvas-search">
+                <div class="position-relative offcanvas-search-form px-3 py-3">
+                    <form class="search-form-top" action="/search/" method="get">
+                        <div class="input-group">
+                            <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
+                            <button class="btn btn-navbar" type="submit" id="btn-search"><i
+                                    class="bi bi-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-house-door"></i> Главная</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-file-earmark-plus"></i> Создать заметку
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item active">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-list-ul"></i> Мои заметки</div>
+                            <span class="badge rounded-pill bg-success">9</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-star"></i> Избранное</div>
+                            <span class="badge rounded-pill bg-warning text-dark">4</span>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-basket2"></i> Корзина</div>
+                            <span class="badge rounded-pill bg-secondary">4</span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <hr>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-person-workspace"></i> Для разработчиков
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="list-group-item--div">
+                        <a class="d-flex justify-content-between" href="#">
+                            <div class="icanvas"><i class="bi bi-box-arrow-left">
+                                </i> Выйти</div>
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+            </ul>
+        </div>
+    </div>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0 min-vh-100 position-relative py-5">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Заметки на полях</h3>
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle toggle-action" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Действия
+                        </button>
+                        <ul class="dropdown-menu link-action" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Править</a></li>
+                            <li><a class="dropdown-item" href="#">Удалить</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="dropdown">
+                        <a href="#" type="button" class=" dropdown tn btn-sm btn-labeled btn-action " data-bs-toggle="collapse " href="#multiCollapseExample1 " role="button " aria-expanded="false " aria-controls="multiCollapseExample1 "><i class="bi bi-grip-vertical "></i></a>
+
+                    </div> -->
+                </div>
+                <div class="card-body lead ">
+                    <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается.</p>
+                    <p>Материальный дизайн) — альтернатива Natural design от творческой студии DC studio, стиль графического дизайна интерфейсов программного обеспечения и приложений, разработанный компанией Google. Впервые представлен на конференции Google
+                        I/O 25 июня 2014 года. Стиль расширяет идею «карточек», появившуюся в Google Now, более широким применением строгих макетов, анимаций и переходов, отступов и эффектов глубины (света и тени). По идее графических дизайнеров Google,
+                        у приложений не должно быть острых углов, карточки должны переключаться между собой плавно и практически незаметно[1].</p>
+                    <div class="card-bottom ">
+                        <div>
+                            <div class="star-card ">
+                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star-fill " viewBox="0 0 16 16 ">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8
+                            13.187l-4.389 2.256z " />
+                                    </svg>
+                                <!-- <span class="star "></span> -->
+                            </div>
+                        </div>
+                        <!-- <div class="card-date card-bottom-actions ">
+
+                            <a href="# " type="button " class="btn btn-sm btn-labeled btn-action "><i class="bi bi-pencil-square "></i></a>
+                            <a href="# " type="button " class="btn btn-sm btn-labeled btn-action "><i class="bi bi-x-lg "></i></a>
+
+
+                        </div> -->
+                        <div class="card-date ">24 ноября 2021 г. 18:45</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+</body>
+
+</html>
