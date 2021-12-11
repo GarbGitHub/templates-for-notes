@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
-    <title>Заметка</title>
+    <title>Требуется подтверждение</title>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -30,7 +30,7 @@
                 </button>
             </div>
             <div class="position-absolute start-50 translate-middle-x">
-                <h1 class="text-center header">Заметки</h1>
+                <h1 class="text-center header">Подтвердите</h1>
             </div>
             <div class="position-absolute end-0 px-3">
                 <div class="nav-search-form">
@@ -41,16 +41,6 @@
                                     class="bi bi-search"></i></button>
                         </div>
                     </form>
-                </div>
-                <div class="nav-addnote">
-                    <a href="#" title="Создать заметку">
-                        <div class="addnote-top">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
-                              </svg>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
                 </div>
             </div>
         </div>
@@ -144,58 +134,8 @@
     <!-- Begin page content -->
     <main class="flex-shrink-0 min-vh-100 position-relative py-5">
         <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Заметки на полях</h3>
-                    <div class="dropdown">
-                        <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                          <span><i class="bi bi-grip-vertical"></i></span>
-                        </button>
-                        <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
-                            <li><a class="dropdown-item" href="#">Править</a></li>
-                            <li><a class="dropdown-item" href="#">Удалить</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-body lead ">
-                    <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается.</p>
-                    <p>Материальный дизайн) — альтернатива Natural design от творческой студии DC studio, стиль графического дизайна интерфейсов программного обеспечения и приложений, разработанный компанией Google. Впервые представлен на конференции Google
-                        I/O 25 июня 2014 года. Стиль расширяет идею «карточек», появившуюся в Google Now, более широким применением строгих макетов, анимаций и переходов, отступов и эффектов глубины (света и тени). По идее графических дизайнеров Google,
-                        у приложений не должно быть острых углов, карточки должны переключаться между собой плавно и практически незаметно[1].</p>
-                    <div class="card-bottom ">
-                        <div>
-                            <div class="star-card ">
-                                <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-star-fill " viewBox="0 0 16 16 ">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8
-                            13.187l-4.389 2.256z " />
-                                    </svg>
-                            </div>
-                        </div>
-                        <div class="card-date ">24 ноября 2021 г. 18:45</div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-        <a href="#" title="Создать заметку">
-            <div class="addnote">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
-                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
-                  </svg>
-                <!-- <span class="star"></span> -->
-            </div>
-        </a>
-        <div class="position-fixed bottom-0 end-0 p-3">
-            <div id="liveToast" class="toast fade show" role="status" aria-live="polite" aria-atomic="true">
-                <div class="toast-header bg-light">
-                    <strong class="me-auto">Оповещение</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-                <div class="toast-body">
-                    <i class="bi bi-check-circle-fill text-success"></i> <span>Успешно отредактировано.</span>
-                </div>
-            </div>
+
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
