@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
-    <title>Требуется подтверждение</title>
+    <title>Заметка</title>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -30,7 +30,7 @@
                 </button>
             </div>
             <div class="position-absolute start-50 translate-middle-x">
-                <h1 class="text-center header">Подтвердите</h1>
+                <h1 class="text-center header">Заметки</h1>
             </div>
             <div class="position-absolute end-0 px-3">
                 <div class="nav-search-form">
@@ -41,6 +41,16 @@
                                     class="bi bi-search"></i></button>
                         </div>
                     </form>
+                </div>
+                <div class="nav-addnote">
+                    <a href="#" title="Создать заметку">
+                        <div class="addnote-top">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                              </svg>
+                            <!-- <span class="star"></span> -->
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -135,8 +145,53 @@
     <main class="flex-shrink-0 min-vh-100 position-relative py-5">
         <div class="container">
 
+            <!--В корзину-->
+            <div class="alert alert-danger shadow-lg" role="alert">
+                <h4 class="alert-heading">Внимание!</h4>
+                <p>Вы пытаетесь перенести в корзину заметку "Block buttons". Заметки перенесенные в Корзину можно восстановить.</p>
+                <p class="mb-0 text-center"><strong>Вы точно хотите переместить в Корзину заметку "Block buttons"?</strong></p>
+                <div class="alert-menu d-flex justify-content-center w-100">
+                    <a href="" type="button" class="btn alert-button">Да</a>
+                    <a href="" type="button" class="btn alert-button">Нет</a>
+                </div>
+            </div>
+
+            <!--Удалить-->
+            <div class="alert alert-danger shadow-lg" role="alert">
+                <h4 class="alert-heading">Внимание!</h4>
+                <p>Вы пытаетесь полностью удалить заметку с названием "Block buttons". Последующее восстановление будет невозможно!</p>
+                <p class="mb-0 text-center"><strong>Вы точно хотите удалить заметку "Block buttons"?</strong></p>
+                <div class="alert-menu d-flex justify-content-center w-100">
+                    <a href="" type="button" class="btn alert-button">Да</a>
+                    <a href="" type="button" class="btn alert-button">Нет</a>
+                </div>
+            </div>
+
+            <div class="alert alert-warning alert-warning-note shadow-lg" role="alert">
+                <p>
+                    У вас нет заметок. <a href="/notes/create/">Создайте</a> первую заметку, или воспользуйтесь другими возможностями, нажав на иконку меню в верхнем левом углу.
+                </p>
+            </div>
+            <div class="alert alert-warning alert-warning-note shadow-lg" role="alert">
+                <p>
+                    В списке "Избранное" пока нет ни одной заметки.
+                </p>
+            </div>
+            <div class="alert alert-warning alert-warning-note shadow-lg" role="alert">
+                <p>
+                    Ваша "Корзина" пуста.
+                </p>
+            </div>
 
         </div>
+        <a href="#" title="Создать заметку">
+            <div class="addnote">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
+                  </svg>
+                <!-- <span class="star"></span> -->
+            </div>
+        </a>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
