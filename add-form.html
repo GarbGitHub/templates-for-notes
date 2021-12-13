@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/forms.css">
-    <title>Отредактировать заметку</title>
+    <title>Создать заметку</title>
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -31,7 +31,7 @@
                 </button>
             </div>
             <div class="position-absolute start-50 translate-middle-x">
-                <h1 class="text-center header">Отредактировать</h1>
+                <h1 class="text-center header">Создать</h1>
             </div>
             <div class="position-absolute end-0 px-3">
                 <div class="nav-search-form">
@@ -147,18 +147,8 @@
         <div class="container">
             <!-- EDIT FORM -->
             <form class="form-horizontal text-center" method="post" enctype="multipart/form-data">
-                <input type="text" maxlength="128" name="title" value="Заметался пожар голубой" maxlength="128" class="form-control input-title" placeholder="Заголовок" required="" id="id_title">
-                <textarea name="text" cols="40" rows="10" class="form-control input-text" placeholder="Текст заметки" id="id_text">
-Заметался пожар голубой,
-Позабылись родимые дали.
-В первый раз я запел про любовь,
-В первый раз отрекаюсь скандалить.
-
-Был я весь — как запущенный сад,
-Был на женщин и зелие падкий.
-Разонравилось пить и плясать
-И терять свою жизнь без оглядки.
-                </textarea>
+                <input type="text" maxlength="128" name="title" value="" maxlength="128" class="form-control input-title" placeholder="Заголовок" required="" id="id_title">
+                <textarea name="text" cols="40" rows="10" class="form-control input-text" placeholder="Текст заметки" id="id_text"></textarea>
                 <input type="checkbox" name="is_favorites" class="form-check-input" id="id_is_favorites" checked="">
                 <label for="id_is_favorites" class="m-4"></label>
                 <div class="">
