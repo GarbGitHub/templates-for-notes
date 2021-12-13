@@ -388,16 +388,7 @@ a.nav-link i.bi {
 
 .pg-item:hover,
 .pg-item.active {
-    background-color: #a48b83;
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
-    position: relative;
-    transition: .3s;
-    border-width: 5px;
-    border-style: solid;
     border-color: #60403e;
-    margin: 5px;
 }
 
 .pg-item:hover span,
@@ -409,6 +400,26 @@ a.nav-link i.bi {
     transform: translate(-50%, -50%);
     transition: .3s;
     color: rgb(255, 255, 255);
+}
+
+@media (max-width: 450px) {
+    .pg-item {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        position: relative;
+        transition: .3s;
+        border-width: 4px;
+        border-style: solid;
+        margin: 3px;
+    }
+    .pg-item span {
+        font-size: 17px;
+    }
+    .pg-item:hover span,
+    .pg-item.active span {
+        font-size: 17px;
+    }
 }
 
 .offcanvas-body {
