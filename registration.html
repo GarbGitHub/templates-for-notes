@@ -35,16 +35,16 @@
             <form class="form-sing rounded">
                 <h1 class="form-sigin-h1 mb-3 fw-normal">Зарегистрироваться</h1>
                 <div class="form-floating">
-                    <input type="email" class="form-control sing" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email</label>
+                    <input type="email" name="email" class="form-control sing" id="id_email" placeholder="name@example.com" required>
+                    <label for="id_email">Email</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control sing" id="floatingPassword1" placeholder="Password">
-                    <label for="floatingPassword1">Password</label>
+                    <input type="password" name="password1" class="form-control sing" id="id_password1" placeholder="Password" required>
+                    <label for="id_password1">Password</label>
                 </div>
                 <div class="form-floating">
-                    <input type="password" class="form-control sing" id="floatingPassword" placeholder="Repeat password">
-                    <label for="floatingPassword">Repeat password</label>
+                    <input type="password" name="password2" class="form-control sing" id="id_password2" placeholder="Repeat password" required>
+                    <label for="id_password2">Repeat password</label>
                 </div>
                 <button class="w-100 btn btn-lg btn form-sigin-submit" type="submit">Отправить</button>
             </form>
