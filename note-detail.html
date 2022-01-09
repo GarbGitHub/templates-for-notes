@@ -19,6 +19,21 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/forms.css">
+    <style>
+        .lead {
+            font-size: 18px;
+        }
+        
+        @media (min-height: 700px) {
+            .offcanvas-body {
+                background-color: white;
+                background-image: url('media/undraw_notes_re_pxhw.svg');
+                background-position: bottom right;
+                background-repeat: no-repeat;
+                background-size: 300px;
+            }
+        }
+    </style>
     <title>Заметка</title>
 </head>
 
@@ -56,15 +71,16 @@
             </div>
         </div>
     </nav>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true" aria-labelledby="offcanvasNavbarLabel" aria-modal="true" role="dialog" style="visibility: visible;">
         <div class="offcanvas-header">
-            <a href="" class="offcanvas-header--link">
+
+            <a href="/auth/edit/" class="offcanvas-header--link">
                 <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                    example@gmail.com
+                    Сергей К.
                 </h5>
             </a>
-            <button class="btn close-offcanvas" type="button" data-bs-dismiss="offcanvas"><i
-                    class="bi bi-x-lg"></i></button>
+
+            <button class="btn close-offcanvas" type="button" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
         </div>
         <div class="offcanvas-body">
             <div class="offcanvas-search">
@@ -72,58 +88,84 @@
                     <form class="search-form-top" action="/search/" method="get">
                         <div class="input-group">
                             <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
-                            <button class="btn btn-navbar" type="submit" id="btn-search"><i
-                                    class="bi bi-search"></i></button>
+                            <button class="btn btn-navbar" type="submit" id="btn-search"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
                 </div>
             </div>
+
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item ">
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-house-door"></i> Главная</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/notes/create/">
                             <div class="icanvas"><i class="bi bi-file-earmark-plus"></i> Создать заметку
                             </div>
                         </a>
                     </div>
                 </li>
+
                 <li class="list-group-item active">
+
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/notes/">
                             <div class="icanvas"><i class="bi bi-list-ul"></i> Мои заметки</div>
-                            <span class="badge rounded-pill bg-success">9</span>
+
+                            <span class="badge rounded-pill bg-success">27</span>
                         </a>
                     </div>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item ">
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/notes/favorites/">
                             <div class="icanvas"><i class="bi bi-star"></i> Избранное</div>
-                            <span class="badge rounded-pill bg-warning text-dark">4</span>
+
+                            <span class="badge rounded-pill bg-warning text-dark">3</span>
                         </a>
                     </div>
                 </li>
+
                 <li class="list-group-item">
+
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/notes/basket/">
                             <div class="icanvas"><i class="bi bi-basket2"></i> Корзина</div>
-                            <span class="badge rounded-pill bg-secondary">4</span>
+
+                            <span class="badge rounded-pill bg-secondary">1</span>
                         </a>
                     </div>
                 </li>
             </ul>
-            <hr>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="icanvas"><i class="bi bi-gear"></i> Шрифт</span></button>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="themes small">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ch" type="radio" name="inlineRadioOptions" id="RadioLight" value="light">
+                                    <label class="form-check-label fon fon1" for="RadioLight"></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input ch" type="radio" name="inlineRadioOptions" id="RadioDark" value="dark" checked="checked">
+                                    <label class="form-check-label fon fon2" for="RadioDark"></label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label for="sizeRange" class="form-label" id="sizeValue">Текст</label>
+                                </div>
+                            </div>
+                            <div class="slidecontainer">
+                                <input type="range" class="form-range" min="10" max="50" value="30" id="sizeRange">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <ul class="list-group">
-                <li class="list-group-item">
+                <li class="list-group-item ">
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/fordev/">
                             <div class="icanvas"><i class="bi bi-person-workspace"></i> Для разработчиков
                             </div>
                         </a>
@@ -131,14 +173,14 @@
                 </li>
                 <li class="list-group-item">
                     <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
+                        <a class="d-flex justify-content-between" href="/auth/logout/">
                             <div class="icanvas"><i class="bi bi-box-arrow-left">
                                 </i> Выйти</div>
                         </a>
                     </div>
                 </li>
-                <li class="list-group-item">
             </ul>
+
         </div>
     </div>
 
@@ -158,7 +200,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-body lead ">
+                <div class="card-body lead">
                     <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается.</p>
                     <p>Материальный дизайн) — альтернатива Natural design от творческой студии DC studio, стиль графического дизайна интерфейсов программного обеспечения и приложений, разработанный компанией Google. Впервые представлен на конференции Google
                         I/O 25 июня 2014 года. Стиль расширяет идею «карточек», появившуюся в Google Now, более широким применением строгих макетов, анимаций и переходов, отступов и эффектов глубины (света и тени). По идее графических дизайнеров Google,
@@ -201,6 +243,7 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    <script src="static/notes/js/app.js"></script>
 </body>
 
 </html>
