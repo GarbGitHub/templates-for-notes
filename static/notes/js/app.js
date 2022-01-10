@@ -8,7 +8,6 @@ if ('serviceWorker' in navigator) {
         .catch(function(error) {
             console.log(error);
         });
-
 }
 
 // Cookies
@@ -30,20 +29,14 @@ function defineThemeFromCookies() {
 }
 
 function defineSizeFromCookies() {
-    // Если есть куки, устанавливаем стили
     let lead = document.getElementsByClassName('lead');
-    let userFontSize = document.getElementById('sizeRange')
-    let output = document.getElementById("sizeValue");
-    let cookTheme = get_cookie("cookieFs");
-    let cookFamily = get_cookie("theme");
-    console.log(cookTheme)
-    if (cookTheme) {
-        userFontSize.value = cookTheme;
+    let userFontSize = document.getElementById('sizeRange');
+    let cookFs = get_cookie("cookieFs");
+    // If there are cookies, set the styles
+    if (cookFs) {
+        userFontSize.value = cookFs;
         for (let i = 0; i < lead.length; ++i)
-            lead[i].style.fontSize = '1.' + cookTheme + 'rem';
-    }
-    if (cookFamily) {
-        output.classList.add(cookFamily);
+            lead[i].style.fontSize = '1.' + cookFs + 'rem';
     }
 }
 
@@ -53,21 +46,27 @@ function tagClassChange() {
             document.documentElement.classList.remove('dark', 'light');
             let theme = event.target.value;
             document.documentElement.classList.add(theme);
-
             let output = document.getElementById("sizeValue");
             output.classList.remove('dark', 'light');
             output.classList.add(theme);
-
             create_cookie("theme", theme);
             radioButtonChecked(theme);
         }
     });
     document.querySelector('.slidecontainer').addEventListener('change', (event) => {
-        // Если пользователь выберает шрифт
+
+        // If the user chooses the font size
         if (event.target.nodeName === 'INPUT') {
             let lead = document.getElementsByClassName('lead');
+            let inputText = document.getElementById("id_text");
             let sizeValue = event.target.value;
-            // Удаляем имеющие стили и устанавливаем новые
+
+            // Remove existing styles and install new ones
+            if (inputText) {
+                inputText.style.removeProperty('font-size');
+                inputText.style.fontSize = '1.' + sizeValue + 'rem';
+            }
+
             for (let i = 0; i < lead.length; ++i) {
                 lead[i].style.removeProperty('font-size');
                 lead[i].style.fontSize = "1." + sizeValue + 'rem';
@@ -167,9 +166,26 @@ function definingKeyType() {
 function setFontSizeForRange() {
     let slider = document.getElementById("sizeRange");
     let output = document.getElementById("sizeValue");
+    let inputText = document.getElementById("id_text");
+    let lead = document.getElementsByClassName('lead');
+
     output.style.fontSize = '1.' + slider.value + 'rem';
+    if (inputText) {
+        inputText.style.fontSize = '1.' + slider.value + 'rem';
+    }
 
     slider.oninput = function() {
+        if (inputText) {
+            inputText.style.fontSize = '1.' + slider.value + 'rem';
+        }
         output.style.fontSize = '1.' + slider.value + 'rem';
+        updateStyleValue(lead, slider.value)
+    }
+}
+
+function updateStyleValue(element, styleValue) {
+    for (let i = 0; i < element.length; ++i) {
+        element[i].style.removeProperty('font-size');
+        element[i].style.fontSize = '1.' + styleValue + 'rem';
     }
 }

@@ -59,12 +59,13 @@ h3 {
     font-family: var(--card-family);
 }
 
-.form-label.light {
-    font-family: 'Lobster', cursive;
-}
 
-.form-label.dark {
-    font-family: 'Merriweather', serif;
+/* .form-label.light {
+    font-family: 'Lobster', cursive;
+} */
+
+.form-label {
+    font-family: var(--card-family);
 }
 
 h1.header {
