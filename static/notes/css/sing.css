@@ -29,9 +29,9 @@
     max-width: 42em;
 }
 
-.header-logo,
-.header-logo:hover {
-    color: white;
+.header-logo img,
+.header-logo img:hover {
+    height: 35px;
 }
 
 
@@ -97,7 +97,7 @@
     background-color: #ffede4;
 }
 
-.form-sing input[type="password"]#floatingPassword1 {
+.form-sing input[type="password"]#id_password1 {
     margin-bottom: -1px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;

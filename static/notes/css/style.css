@@ -6,8 +6,30 @@ html.dark {
     --card-family: 'Merriweather', serif;
 }
 
+html.bgcolor {
+    --bgcolor: #EEEEEE;
+    --bgimage: none;
+    --over: none;
+}
+
+html.over {
+    --bgcolor: #EEEEEE;
+    --bgimage: url('../images/bg-cover.jpg');
+    --over: rgba(53, 25, 24, 0.9);
+}
+
 body {
-    background-color: #EEEEEE;
+    position: relative;
+    background-color: var(--bgcolor);
+    background-image: var(--bgimage);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.body-over {
+    background-color: var(--over);
 }
 
 body,

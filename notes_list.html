@@ -19,339 +19,387 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/style.css">
     <link rel="stylesheet" type="text/css" href="static/notes/css/forms.css">
-    <link rel="stylesheet" type="text/css" href="static/notes/css/notes-list.css">
     <title> Список заметок </title>
 </head>
 
 <body class="d-flex flex-column h-100">
-    <nav class="navbar fixed-top">
-        <div class="container-fluid position-relative">
-            <div class="position-absolute start-0 px-3">
-                <button class="btn btn-navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <div class="body-over">
+        <nav class="navbar fixed-top">
+            <div class="container-fluid position-relative">
+                <div class="position-absolute start-0 px-3">
+                    <button class="btn btn-navbar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <i class="bi bi-sliders"></i>
                 </button>
-            </div>
-            <div class="position-absolute start-50 translate-middle-x">
-                <h1 class="text-center header">Заметки</h1>
-            </div>
-            <div class="position-absolute end-0 px-3">
-                <div class="nav-search-form">
-                    <form class="search-form-top" action="/search/" method="get">
-                        <div class="input-group">
-                            <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
-                            <button class="btn btn-navbar" type="submit" id="btn-search"><i
-                                    class="bi bi-search"></i></button>
-                        </div>
-                    </form>
                 </div>
-                <div class="nav-addnote">
-                    <a href="#" title="Создать заметку">
-                        <div class="addnote-top">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+                <div class="position-absolute start-50 translate-middle-x">
+                    <h1 class="text-center header">Заметки</h1>
+                </div>
+                <div class="position-absolute end-0 px-3">
+                    <div class="nav-search-form">
+                        <form class="search-form-top" action="/search/" method="get">
+                            <div class="input-group">
+                                <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
+                                <button class="btn btn-navbar" type="submit" id="btn-search"><i
+                                    class="bi bi-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="nav-addnote">
+                        <a href="#" title="Создать заметку">
+                            <div class="addnote-top">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
                                 <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
                               </svg>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-            <a href="" class="offcanvas-header--link">
-                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-                    example@gmail.com
-                </h5>
-            </a>
-            <button class="btn close-offcanvas" type="button" data-bs-dismiss="offcanvas"><i
-                    class="bi bi-x-lg"></i></button>
-        </div>
-        <div class="offcanvas-body">
-            <div class="offcanvas-search">
-                <div class="position-relative offcanvas-search-form px-3 py-3">
-                    <form class="search-form-top" action="/search/" method="get">
-                        <div class="input-group">
-                            <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
-                            <button class="btn btn-navbar" type="submit" id="btn-search"><i
-                                    class="bi bi-search"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-house-door"></i> Главная</div>
-                        </a>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-file-earmark-plus"></i> Создать заметку
+                                <!-- <span class="star"></span> -->
                             </div>
                         </a>
                     </div>
-                </li>
-                <li class="list-group-item active">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-list-ul"></i> Мои заметки</div>
-                            <span class="badge rounded-pill bg-success">9</span>
-                        </a>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-star"></i> Избранное</div>
-                            <span class="badge rounded-pill bg-warning text-dark">4</span>
-                        </a>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-basket2"></i> Корзина</div>
-                            <span class="badge rounded-pill bg-secondary">4</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-person-workspace"></i> Для разработчиков
+                </div>
+            </div>
+        </nav>
+        <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvasNavbar" data-bs-scroll="true" aria-labelledby="offcanvasNavbarLabel" aria-modal="true" role="dialog" style="visibility: visible;">
+            <div class="offcanvas-header">
+
+                <a href="edit-user-profile.html" class="offcanvas-header--link">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                        Сергей К.
+                    </h5>
+                </a>
+
+                <button class="btn close-offcanvas" type="button" data-bs-dismiss="offcanvas"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas-search">
+                    <div class="position-relative offcanvas-search-form px-3 py-3">
+                        <form class="search-form-top" action="/search/" method="get">
+                            <div class="input-group">
+                                <input class="form-control search" name="q" type="text" aria-describedby="btn-search" placeholder="Поиск...">
+                                <button class="btn btn-navbar" type="submit" id="btn-search"><i class="bi bi-search"></i></button>
                             </div>
-                        </a>
+                        </form>
                     </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="list-group-item--div">
-                        <a class="d-flex justify-content-between" href="#">
-                            <div class="icanvas"><i class="bi bi-box-arrow-left">
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="/notes/create/">
+                                <div class="icanvas"><i class="bi bi-file-earmark-plus"></i> Создать заметку
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item active">
+
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="/notes/">
+                                <div class="icanvas"><i class="bi bi-list-ul"></i> Мои заметки</div>
+
+                                <span class="badge rounded-pill bg-success">27</span>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list-group-item ">
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="/notes/favorites/">
+                                <div class="icanvas"><i class="bi bi-star"></i> Избранное</div>
+
+                                <span class="badge rounded-pill bg-warning text-dark">3</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="list-group-item">
+
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="/notes/basket/">
+                                <div class="icanvas"><i class="bi bi-basket2"></i> Корзина</div>
+
+                                <span class="badge rounded-pill bg-secondary">1</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <span class="icanvas"><i class="bi bi-gear"></i> Настройки</span></button>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="themes small">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input ch" type="radio" name="inlineRadioOptions" id="RadioLight" value="light">
+                                        <label class="form-check-label fon fon1" for="RadioLight"></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input ch" type="radio" name="inlineRadioOptions" id="RadioDark" value="dark" checked="checked">
+                                        <label class="form-check-label fon fon2" for="RadioDark"></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label for="sizeRange" class="form-label" id="sizeValue">Текст</label>
+                                    </div>
+                                </div>
+                                <div class="slidecontainer">
+                                    <input type="range" class="form-range" min="10" max="50" value="30" id="sizeRange">
+                                </div>
+                                <!--change theme-->
+                                <div class="bgthemes small">
+                                    <div class="form-check">Фон</div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="chbox-changetheme" type="checkbox" name="inlineRadioOptions" id="backgroundColor" value="bgcolor">
+                                        <label class="form-check-label clrbg" for="backgroundColor"></label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="chbox-changetheme" type="checkbox" name="inlineRadioOptions" id="backgroundImage" value="over">
+                                        <label class="form-check-label imgbg" for="backgroundImage"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item ">
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="/fordev/">
+                                <div class="icanvas"><i class="bi bi-person-workspace"></i> Для разработчиков
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="list-group-item--div">
+                            <a class="d-flex justify-content-between" href="login.html">
+                                <div class="icanvas"><i class="bi bi-box-arrow-left">
                                 </i> Выйти</div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
 
-    <!-- Begin page content -->
-    <main class="flex-shrink-0 min-vh-100 position-relative py-5">
-        <div class="container">
-            <a class="link-card" href="#">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Заметки на полях</h3>
-                        <object>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <span><i class="bi bi-grip-vertical"></i></span>
-                                </button>
-                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
-                                    <li><a class="dropdown-item" href="#">Править</a></li>
-                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
-                                </ul>
-                            </div>
-                        </object>
-                    </div>
-                    <div class="card-body lead">
-                        <p>(Материальный дизайн) — альтернатива Natural design от творческой студии DC studio</p>
-                        <div class="card-bottom">
-                            <div>
-                                <div class="star-card">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                    </svg>
-                                    <!-- <span class="star"></span> -->
-                                </div>
-                            </div>
-                            <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
-                                    18:45</span></div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a class="link-card" href="#">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Заметки на полях</h3>
-                        <object>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <span><i class="bi bi-grip-vertical"></i></span>
-                                </button>
-                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
-                                    <li><a class="dropdown-item" href="#">Править</a></li>
-                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
-                                </ul>
-                            </div>
-                        </object>
-                    </div>
-                    <div class="card-body lead">
-                        <p>A collection of 83 Free One Page templates. Each template includes a review, long screenshot, live demo and download links. These free templates are great.</p>
-                        <div class="card-bottom">
-                            <div>
-                                <div class="star-card">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                    </svg>
-                                    <!-- <span class="star"></span> -->
-                                </div>
-                            </div>
-                            <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
-                                    18:45</span></div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a class="link-card" href="#">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Заметки на полях</h3>
-                        <object>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <span><i class="bi bi-grip-vertical"></i></span>
-                                </button>
-                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
-                                    <li><a class="dropdown-item" href="#">Править</a></li>
-                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
-                                </ul>
-                            </div>
-                        </object>
-                    </div>
-                    <div class="card-body lead">
-                        <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается. По идее графических дизайнеров Google, у приложений не должно быть острых углов</p>
-                        <div class="card-bottom">
-                            <div>
-                                <div class="star-card">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                    </svg>
-                                    <!-- <span class="star"></span> -->
-                                </div>
-                            </div>
-                            <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
-                                    18:45</span></div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <a class="link-card" href="#">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">Заметки на полях. Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается.</h3>
-                        <object>
-                            <div class="dropdown">
-                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <span><i class="bi bi-grip-vertical"></i></span>
-                                </button>
-                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
-                                    <li><a class="dropdown-item" href="#">Править</a></li>
-                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
-                                </ul>
-                            </div>
-                        </object>
-                    </div>
-                    <div class="card-body lead">
-                        <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается. Впервые представлен на конференции Google I/O 25 июня 2014 года. </p>
-                        <div class="card-bottom">
-                            <div>
-                            </div>
-                            <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
-                                    18:45</span></div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            </div>
         </div>
 
-        <a href="#" title="Создать заметку">
-            <div class="addnote">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
+        <!-- Begin page content -->
+        <main class="flex-shrink-0 min-vh-100 position-relative py-5">
+            <div class="container">
+                <a class="link-card" href="#">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Заметки на полях</h3>
+                            <object>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span><i class="bi bi-grip-vertical"></i></span>
+                                </button>
+                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
+                                    <li><a class="dropdown-item" href="#">Править</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                </ul>
+                            </div>
+                        </object>
+                        </div>
+                        <div class="card-body lead">
+                            <p>(Материальный дизайн) — альтернатива Natural design от творческой студии DC studio</p>
+                            <div class="card-bottom">
+                                <div>
+                                    <div class="star-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                        <!-- <span class="star"></span> -->
+                                    </div>
+                                </div>
+                                <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
+                                    18:45</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="link-card" href="#">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Заметки на полях</h3>
+                            <object>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span><i class="bi bi-grip-vertical"></i></span>
+                                </button>
+                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
+                                    <li><a class="dropdown-item" href="#">Править</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                </ul>
+                            </div>
+                        </object>
+                        </div>
+                        <div class="card-body lead">
+                            <p>A collection of 83 Free One Page templates. Each template includes a review, long screenshot, live demo and download links. These free templates are great.</p>
+                            <div class="card-bottom">
+                                <div>
+                                    <div class="star-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                        <!-- <span class="star"></span> -->
+                                    </div>
+                                </div>
+                                <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
+                                    18:45</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="link-card" href="#">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Заметки на полях</h3>
+                            <object>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span><i class="bi bi-grip-vertical"></i></span>
+                                </button>
+                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
+                                    <li><a class="dropdown-item" href="#">Править</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                </ul>
+                            </div>
+                        </object>
+                        </div>
+                        <div class="card-body lead">
+                            <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается. По идее графических дизайнеров Google, у приложений не должно быть острых углов</p>
+                            <div class="card-bottom">
+                                <div>
+                                    <div class="star-card">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+                                    </svg>
+                                        <!-- <span class="star"></span> -->
+                                    </div>
+                                </div>
+                                <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
+                                    18:45</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="link-card" href="#">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Заметки на полях. Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается.</h3>
+                            <object>
+                            <div class="dropdown">
+                                <button type="button" class="btn dropdown-toggle toggle-action" id="dropdownCardMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <span><i class="bi bi-grip-vertical"></i></span>
+                                </button>
+                                <ul class="dropdown-menu link-action" aria-labelledby="dropdownCardMenu">
+                                    <li><a class="dropdown-item" href="#">Править</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить</a></li>
+                                </ul>
+                            </div>
+                        </object>
+                        </div>
+                        <div class="card-body lead">
+                            <p>Когда понимаешь, что жизнь пуста и бессмысленна, один выход все-таки остается. Впервые представлен на конференции Google I/O 25 июня 2014 года. </p>
+                            <div class="card-bottom">
+                                <div>
+                                </div>
+                                <div class="card-date align-middle"><span class="align-middle">24 ноября 2021 г.
+                                    18:45</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <a href="#" title="Создать заметку">
+                <div class="addnote">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
                     <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0zM9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1zM8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0z"/>
                   </svg>
-                <!-- <span class="star"></span> -->
-            </div>
-        </a>
-        <p class="text-center">Page 1 of 4.</p>
-        <nav aria-label="Page navigation bootstrap">
-            <ul class="pagination justify-content-center">
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item">
-                            <span>&laquo;</span>
-                            <!-- <span class="star"></span> -->
+                    <!-- <span class="star"></span> -->
+                </div>
+            </a>
+            <p class="text-center">Page 1 of 4.</p>
+            <nav aria-label="Page navigation bootstrap">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item">
+                                <span>&laquo;</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item">
+                                <span>1</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item active">
+                                <span>2</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item">
+                                <span>3</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item">
+                                <span>4</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                    <li class="page-item" aria-current="page">
+                        <a href="#">
+                            <div class="pg-item">
+                                <span>&raquo;</span>
+                                <!-- <span class="star"></span> -->
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="position-fixed bottom-0 end-0 p-3">
+                <div class="toast fade show align-items-center" role="status" aria-live="polite" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            <i class="bi bi-info-square-fill"></i>
+                            <span class="me-auto">Успешно отредактировано.</span>
                         </div>
-                    </a>
-                </li>
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item">
-                            <span>1</span>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </li>
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item active">
-                            <span>2</span>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </li>
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item">
-                            <span>3</span>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </li>
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item">
-                            <span>4</span>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </li>
-                <li class="page-item" aria-current="page">
-                    <a href="#">
-                        <div class="pg-item">
-                            <span>&raquo;</span>
-                            <!-- <span class="star"></span> -->
-                        </div>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="position-fixed bottom-0 end-0 p-3">
-            <div class="toast fade show align-items-center" role="status" aria-live="polite" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        <i class="bi bi-info-square-fill"></i>
-                        <span class="me-auto">Успешно отредактировано.</span>
+                        <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                     </div>
-                    <button type="button" class="btn-close btn-close-dark me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
             </div>
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    <script src="static/notes/js/app.js"></script>
+    <script src='static/notes/js/autosize.js'></script>
+    <script src='static/notes/js/register-sw.js'></script>
+    <script>
+        autosize(document.querySelectorAll('textarea'));
+    </script>
+
 </body>
 
 </html>
