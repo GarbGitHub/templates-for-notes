@@ -12,3 +12,4 @@ HTML templates for the Notes service
 - [Информационные сообщения](https://garbgithub.github.io/templates-for-notes/confirmation.html)
 - [Изменить профиль пользователя](https://garbgithub.github.io/templates-for-notes/edit-user-profile.html)
 - [Изменить пароль пользователя](https://garbgithub.github.io/templates-for-notes/change-password.html)
+- [Page offline](https://garbgithub.github.io/templates-for-notes/offline.html)
